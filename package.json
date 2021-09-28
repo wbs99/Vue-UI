@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/wbs99/Vue-UI/issues"
   },
-  "homepage": "https://github.com/wbs99/Vue-UI#readme"
+  "homepage": "https://github.com/wbs99/Vue-UI#readme",
+  "dependencies": {
+    "vue": "^2.6.14"
+  }
 }
