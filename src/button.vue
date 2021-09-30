@@ -1,8 +1,6 @@
 <template>
   <button class="good-button" :class="{ [`icon-${iconPosition}`]: true }">
-    <svg v-if="icon" class="icon">
-      <use :xlink:href="`#i-${icon}`"></use>
-    </svg>
+    <g-icon v-if="icon" :name="icon"></g-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -44,7 +42,6 @@ export default {
   > .icon {
     order: 1;
     margin-right: 0.1em;
-    margin-top: 0.1em;
   }
   > .content {
     order: 2;
