@@ -5,10 +5,30 @@
   border-radius: var(--border-radius);
   border: 1px solid var(--border-color);
   background: var(--button-bg);
+  vertical-align: middle;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 .good-button:hover {
   border-color: var(--border-color-hover);
 }
 .good-button:active {
   background-color: var(--button-active-bg);
+}
+.good-button > .icon {
+  order: 1;
+  margin-right: 0.1em;
+  margin-top: 0.1em;
+}
+.good-button > .content {
+  order: 2;
+}
+.good-button.icon-right > .icon {
+  order: 2;
+}
+.good-button.icon-right > .content {
+  order: 1;
+  margin-right: 0;
+  margin-left: 0.1em;
 }

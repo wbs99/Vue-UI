@@ -12487,21 +12487,46 @@ exports.default = void 0;
 //
 //
 //
-var _default = {};
+//
+//
+//
+//
+//
+//
+//
+var _default = {
+  props: ['icon', 'iconPosition']
+};
 exports.default = _default;
-        var $807ce4 = exports.default || module.exports;
+        var $1a4cb8 = exports.default || module.exports;
       
-      if (typeof $807ce4 === 'function') {
-        $807ce4 = $807ce4.options;
+      if (typeof $1a4cb8 === 'function') {
+        $1a4cb8 = $1a4cb8.options;
       }
     
         /* template */
-        Object.assign($807ce4, (function () {
+        Object.assign($1a4cb8, (function () {
           var render = function() {
+  var _obj
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("button", { staticClass: "good-button" }, [_vm._v("按钮")])
+  return _c(
+    "button",
+    {
+      staticClass: "good-button",
+      class: ((_obj = {}), (_obj["icon-" + _vm.iconPosition] = true), _obj)
+    },
+    [
+      _vm.icon
+        ? _c("svg", { staticClass: "icon" }, [
+            _c("use", { attrs: { "xlink:href": "#i-" + _vm.icon } })
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _c("div", { staticClass: "content" }, [_vm._t("default")], 2)
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -12523,9 +12548,9 @@ render._withStripped = true
         if (api.compatible) {
           module.hot.accept();
           if (!module.hot.data) {
-            api.createRecord('$807ce4', $807ce4);
+            api.createRecord('$1a4cb8', $1a4cb8);
           } else {
-            api.reload('$807ce4', $807ce4);
+            api.reload('$1a4cb8', $1a4cb8);
           }
         }
 
@@ -12578,7 +12603,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62798" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59847" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
