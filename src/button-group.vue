@@ -7,9 +7,9 @@
 <script>
 export default {
   mounted() {
-    for(let node of this.$el.children){
-      let name=node.nodeName.toLowerCase()
-      if(name!=='button'){
+    for (let node of this.$el.children) {
+      let name = node.nodeName.toLowerCase()
+      if (name !== 'button') {
         console.warn(`good-button-group 的子元素应该全是 good-button，但是你写了 ${name}`)
       }
     }
@@ -24,7 +24,10 @@ export default {
 
   > .good-button {
     border-radius: 0;
-    margin-left: -1px;
+
+    &:not(:first-child) {
+      margin-left: -1px;
+    }
 
     &:first-child {
       border-top-left-radius: var(--border-radius);

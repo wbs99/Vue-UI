@@ -26,28 +26,26 @@
       body {
         font-size: var(--font-size);
       }</style>
-    <style>.icon {
-        width: 1em;
-        height: 1em;
-        vertical-align: -0.15em;
-        fill: currentColor;
-        overflow: hidden;
-      }</style>
   <link rel="stylesheet" href="/app.a6a4d504.css"></head>
   <body>
     <div id="app">
-      <good-button icon="settings" icon-position="right">
+      <good-button :loading="loading1" @click="loading1=!loading1" icon="settings" icon-position="right">
         按钮
       </good-button>
-      <good-button>
+      <good-button :loading="loading2" @click="loading2=!loading2">
         按钮
       </good-button>
       <good-button icon="settings" icon-position="left">
         我是通过 slot 传进来的内容
       </good-button>
+      <good-button-group>
+        <good-button icon="left">上一页</good-button>
+        <good-button>更多</good-button>
+        <good-button icon="right" icon-position="right">下一页</good-button>
+      </good-button-group>
     </div>
 
     <script src="/app.a6a4d504.js"></script>
-    <script src="//at.alicdn.com/t/font_2845907_z21p8g2a8hf.js"></script>
+    <script src="//at.alicdn.com/t/font_2845907_mf578cct0l.js"></script>
   </body>
 </html>
