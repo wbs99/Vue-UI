@@ -5,6 +5,16 @@
 </template>
 
 <script>
+export default {
+  mounted() {
+    for(let node of this.$el.children){
+      let name=node.nodeName.toLowerCase()
+      if(name!=='button'){
+        console.warn(`good-button-group 的子元素应该全是 good-button，但是你写了 ${name}`)
+      }
+    }
+  }
+}
 </script>
 
 <style lang='scss'>
