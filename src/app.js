@@ -16,6 +16,10 @@ new Vue({
 })
 
 import chai from 'chai'
+import spies from 'chai-spies'
+
+chai.use(spies)
+
 
 const expect = chai.expect
 //单元测试
@@ -48,7 +52,7 @@ const expect = chai.expect
   vm.$el.remove()
   vm.$destroy()
 }
-//因为判断 icon 左右位置，需要 CSS，所有需要创建一个 div ，把 button 挂载到 div
+//因为判断 icon 左右位置，需要 CSS，所以需要创建一个 div ，把 button 挂载到 div
 {
   const div = document.createElement('div')
   document.body.appendChild(div)
@@ -81,4 +85,18 @@ const expect = chai.expect
   expect(order).to.eq('2')
   button.$el.remove()
   button.$destroy()
+}
+{
+  const Constructor = Vue.extend(Button)
+  const vm = new Constructor({
+    propsData: {
+      icon: 'settings'
+    }
+  })
+  vm.$mount()
+  let spy = chai.spy(function () {})
+  vm.$on('click', spy)
+  let button = vm.$el
+  button.click()
+  expect(spy).to.have.been.called()
 }
