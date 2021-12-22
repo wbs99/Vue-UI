@@ -11,8 +11,8 @@ new Vue({
   el: '#app',
   data: {
     loading1: false,
-    loading2: true
-  }
+    loading2: true,
+  },
 })
 
 import chai from 'chai'
@@ -20,15 +20,14 @@ import spies from 'chai-spies'
 
 chai.use(spies)
 
-
 const expect = chai.expect
 //单元测试
 {
   const Constructor = Vue.extend(Button)
   const vm = new Constructor({
     propsData: {
-      icon: 'settings'
-    }
+      icon: 'settings',
+    },
   })
   vm.$mount()
   let useElement = vm.$el.querySelector('use')
@@ -37,13 +36,14 @@ const expect = chai.expect
   vm.$el.remove()
   vm.$destroy()
 }
+
 {
   const Constructor = Vue.extend(Button)
   const vm = new Constructor({
     propsData: {
       icon: 'settings',
-      loading: true
-    }
+      loading: true,
+    },
   })
   vm.$mount()
   let useElement = vm.$el.querySelector('use')
@@ -52,6 +52,7 @@ const expect = chai.expect
   vm.$el.remove()
   vm.$destroy()
 }
+
 //因为判断 icon 左右位置，需要 CSS，所以需要创建一个 div ，把 button 挂载到 div
 {
   const div = document.createElement('div')
@@ -59,16 +60,17 @@ const expect = chai.expect
   const Constructor = Vue.extend(Button)
   const vm = new Constructor({
     propsData: {
-      icon: 'settings'
-    }
+      icon: 'settings',
+    },
   })
   vm.$mount(div)
   let svg = vm.$el.querySelector('svg')
-  let {order} = window.getComputedStyle(svg)
+  let { order } = window.getComputedStyle(svg)
   expect(order).to.eq('1')
   vm.$el.remove()
   vm.$destroy()
 }
+
 {
   const div = document.createElement('div')
   document.body.appendChild(div)
@@ -76,25 +78,26 @@ const expect = chai.expect
   const button = new Constructor({
     propsData: {
       icon: 'settings',
-      iconPosition: 'right'
-    }
+      iconPosition: 'right',
+    },
   })
   button.$mount(div)
   let svg = button.$el.querySelector('svg')
-  let {order} = window.getComputedStyle(svg)
+  let { order } = window.getComputedStyle(svg)
   expect(order).to.eq('2')
   button.$el.remove()
   button.$destroy()
 }
+
 {
   const Constructor = Vue.extend(Button)
   const vm = new Constructor({
     propsData: {
-      icon: 'settings'
-    }
+      icon: 'settings',
+    },
   })
   vm.$mount()
-  let spy = chai.spy(function () {})
+  let spy = chai.spy(function() {})
   vm.$on('click', spy)
   let button = vm.$el
   button.click()
