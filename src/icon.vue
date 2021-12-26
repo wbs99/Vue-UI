@@ -5,18 +5,19 @@
 </template>
 
 <script>
-  export default {
-    props:['name']
-  }
+import './svg.js'
+export default {
+  props: ['name'],
+}
 </script>
 
-<style lang='scss'>
-  .g-icon {
-    width: 1em;
-    height: 1em;
-    margin-top: 0.1em;
-    vertical-align: -0.15em;
-    fill: currentColor;
-    overflow: hidden;
-  }
+<style lang="scss">
+.g-icon {
+  width: 1em;
+  height: 1em;
+  margin-top: 0.1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
 </style>
