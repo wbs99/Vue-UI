@@ -31,32 +31,46 @@
         font-size: var(--font-size);
       }
     </style>
+    <style>
+      .box {
+        margin: 20px;
+      }
+    </style>
   </head>
   <body>
     <div id="app">
-      <good-button
-        :loading="loading1"
-        @click="loading1=!loading1"
-        icon="settings"
-        icon-position="right"
-      >
-        按钮
-      </good-button>
-      <good-button :loading="loading2" @click="loading2=!loading2">
-        按钮
-      </good-button>
-      <good-button icon="settings" icon-position="left">
-        我是通过 slot 传进来的内容
-      </good-button>
-      <good-button-group>
-        <good-button icon="left">上一页</good-button>
-        <good-button>更多</good-button>
-        <good-button icon="right" icon-position="right">下一页</good-button>
-      </good-button-group>
+      <div class="box">
+        <good-button
+          :loading="loading1"
+          @click="loading1=!loading1"
+          icon="settings"
+          icon-position="right"
+        >
+          按钮
+        </good-button>
+        <good-button :loading="loading2" @click="loading2=!loading2">
+          按钮
+        </good-button>
+        <good-button icon="settings" icon-position="left">
+          我是通过 slot 传进来的内容
+        </good-button>
+        <good-button-group>
+          <good-button icon="left">上一页</good-button>
+          <good-button>更多</good-button>
+          <good-button icon="right" icon-position="right">下一页</good-button>
+        </good-button-group>
+      </div>
+
+      <div class="box">
+        <good-input value="张三"></good-input>
+        <good-input value="李四" disabled></good-input>
+      </div>
+      <div class="box">
+        <good-input value="王" error="姓名不能少于两个字"></good-input>
+      </div>
     </div>
     <div id="test"></div>
 
     <script src="./src/app.js"></script>
-    <!-- <script src="//at.alicdn.com/t/font_2845907_mf578cct0l.js"></script> -->
   </body>
 </html>
