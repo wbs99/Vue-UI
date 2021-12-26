@@ -1,6 +1,14 @@
 <template>
   <div class="wrapper" :class="{ error }">
-    <input :value="value" :disabled="disabled" type="text" />
+    <input
+      :value="value"
+      :disabled="disabled"
+      type="text"
+      @change="$emit('change', $event)"
+      @input="$emit('input', $event)"
+      @focus="$emit('focus', $event)"
+      @blur="$emit('blur', $event)"
+    />
 
     <template v-if="error">
       <Icon name="error" class="icon-error"></Icon>
@@ -25,9 +33,6 @@ export default {
     error: {
       type: String,
     },
-  },
-  mounted() {
-    console.log(this.error)
   },
 }
 </script>
