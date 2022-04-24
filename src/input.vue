@@ -4,10 +4,10 @@
       :value="value"
       :disabled="disabled"
       type="text"
-      @change="$emit('change', $event)"
-      @input="$emit('input', $event)"
-      @focus="$emit('focus', $event)"
-      @blur="$emit('blur', $event)"
+      @change="$emit('change', $event.target.value)"
+      @input="$emit('input', $event.target.value)"
+      @focus="$emit('focus', $event.target.value)"
+      @blur="$emit('blur', $event.target.value)"
     />
 
     <template v-if="error">
@@ -39,11 +39,11 @@ export default {
 
 <style lang="scss" scoped>
 $height: 32px;
-$border-color: #999;
-$border-color-hover: #666;
+$border-color: #d9d9d9;
+$border-color-hover: #1890ff;
 $border-radius: 4px;
 $font-size: 14px;
-$box-shadow-color: rgba(0, 0, 0, 0.5);
+$box-shadow-color: #40a9ff;
 $red: #f1453d;
 .wrapper {
   font-size: $font-size;
@@ -62,7 +62,7 @@ $red: #f1453d;
       border-color: $border-color-hover;
     }
     &:focus {
-      box-shadow: inset 0 1px 3px $box-shadow-color;
+      box-shadow: 0 0 4px $box-shadow-color;
       outline: none;
     }
     &[disabled] {

@@ -64,6 +64,8 @@
       <div class="box">
         <good-input value="张三" @change="inputChange"></good-input>
         <good-input value="李四" disabled></good-input>
+        <good-input v-model="message"></good-input>
+        <p>{{message}}</p>
       </div>
       <div class="box">
         <good-input value="王" error="姓名不能少于两个字"></good-input>
