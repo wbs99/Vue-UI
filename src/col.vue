@@ -1,6 +1,12 @@
 <template>
-  <div class="col" :class="`col-${span}`">
-    <slot></slot>
+  <div
+    class="col"
+    :class="[span && `col-${span}`, offset && `offset-${offset}`]"
+    :style="{ paddingRight: gutter / 2 + 'px', paddingLeft: gutter / 2 + 'px' }"
+  >
+    <div style="border:1px solid green;">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -11,9 +17,14 @@ export default {
     span: {
       type: Number | String,
     },
+    offset: {
+      type: Number | String,
+    },
   },
   data() {
-    return {}
+    return {
+      gutter: 0,
+    }
   },
 }
 </script>
@@ -22,12 +33,16 @@ export default {
 .col {
   width: 50%;
   height: 100px;
-  border: 1px solid red;
-
-  $class: col-;
+  $class-prefix: col-;
   @for $n from 1 through 24 {
-    &.#{$class}#{$n} {
+    &.#{$class-prefix}#{$n} {
       width: ($n/24) * 100%;
+    }
+  }
+  $class-prefix: offset-;
+  @for $n from 1 through 24 {
+    &.#{$class-prefix}#{$n} {
+      margin-left: ($n/24) * 100%;
     }
   }
 }
