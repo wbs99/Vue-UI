@@ -38,29 +38,35 @@
     </style>
   </head>
   <body>
+    <style>
+      .demo {
+        outline: 1px solid #333;
+        background: #ddd;
+        height: 100px;
+      }
+    </style>
     <div id="app">
-      <div style="border:1px solid red;height:500px">
-        <good-row gutter="20">
-          <good-col
-            span="2"
-            :phone="{span:12}"
-            :ipad="{span:8}"
-            :narrow-pc="{span:4}"
-            :pc="{span:2}"
-            :wide-pc="{span:1}"
-            >1
-          </good-col>
-          <good-col
-            span="22"
-            :phone="{span:12}"
-            :ipad="{span:16}"
-            :narrow-pc="{span:20}"
-            :pc="{span:22}"
-            :wide-pc="{span:23}"
-            >2
-          </good-col>
-        </good-row>
-      </div>
+      <good-row>
+        <good-col span="24" :ipad="{span:12}" :pc="{span:8}">
+          <div class="demo"></div>
+        </good-col>
+        <good-col span="24" :ipad="{span:12}" :pc="{span:8}">
+          <div class="demo"></div>
+        </good-col>
+        <good-col span="24" :ipad="{span:12}" :pc="{span:8}">
+          <div class="demo"></div>
+        </good-col>
+        <good-col span="24" :ipad="{span:12}" :pc="{span:8}">
+          <div class="demo"></div>
+        </good-col>
+        <good-col span="24" :ipad="{span:12}" :pc="{span:8}">
+          <div class="demo"></div>
+        </good-col>
+        <good-col span="24" :ipad="{span:12}" :pc="{span:8}">
+          <div class="demo"></div>
+        </good-col>
+      </good-row>
+
       <div class="box">
         <good-button
           :loading="loading1"
