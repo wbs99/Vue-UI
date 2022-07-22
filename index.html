@@ -24,80 +24,37 @@
       }
 
       #app {
-        margin: 20px;
       }
 
       body {
         font-size: var(--font-size);
       }
     </style>
-    <style>
-      .box {
-        margin: 20px;
-      }
-    </style>
   </head>
   <body>
     <style>
-      .demo {
-        outline: 1px solid #333;
-        background: #ddd;
+      .sider {
+        background: #333;
+        width: 100px;
+      }
+      .header {
+        background: #999;
         height: 100px;
+      }
+      .footer {
+        background: #ccc;
+        height: 50px;
       }
     </style>
     <div id="app">
-      <good-row>
-        <good-col span="24" :ipad="{span:12}" :pc="{span:8}">
-          <div class="demo"></div>
-        </good-col>
-        <good-col span="24" :ipad="{span:12}" :pc="{span:8}">
-          <div class="demo"></div>
-        </good-col>
-        <good-col span="24" :ipad="{span:12}" :pc="{span:8}">
-          <div class="demo"></div>
-        </good-col>
-        <good-col span="24" :ipad="{span:12}" :pc="{span:8}">
-          <div class="demo"></div>
-        </good-col>
-        <good-col span="24" :ipad="{span:12}" :pc="{span:8}">
-          <div class="demo"></div>
-        </good-col>
-        <good-col span="24" :ipad="{span:12}" :pc="{span:8}">
-          <div class="demo"></div>
-        </good-col>
-      </good-row>
-
-      <div class="box">
-        <good-button
-          :loading="loading1"
-          @click="loading1=!loading1"
-          icon="settings"
-          icon-position="right"
-        >
-          按钮
-        </good-button>
-        <good-button :loading="loading2" @click="loading2=!loading2">
-          按钮
-        </good-button>
-        <good-button icon="settings" icon-position="left">
-          我是通过 slot 传进来的内容
-        </good-button>
-        <good-button-group>
-          <good-button icon="left">上一页</good-button>
-          <good-button>更多</good-button>
-          <good-button icon="right" icon-position="right">下一页</good-button>
-        </good-button-group>
-      </div>
-
-      <div class="box">
-        <good-input value="张三" @change="inputChange"></good-input>
-        <good-input value="李四" disabled></good-input>
-        <good-input v-model="message"></good-input>
-        <p>{{message}}</p>
-      </div>
-      <div class="box">
-        <good-input value="王" error="姓名不能少于两个字"></good-input>
-      </div>
+      <good-layout style="height:100vh">
+        <good-sider>sider</good-sider>
+        <good-layout>
+          <good-header>header</good-header>
+          <good-content>content</good-content>
+          <good-footer>footer</good-footer>
+        </good-layout>
+      </good-layout>
     </div>
     <div id="test"></div>
 

@@ -8,17 +8,17 @@
 
 <script>
 let validator = value => {
-  const keys = Object.keys(value)
-  let valid = true
+  const keys = Object.keys(value);
+  let valid = true;
   keys.forEach(key => {
-    if (!['span', 'offset'].includes(key)) {
-      valid = false
+    if (!["span", "offset"].includes(key)) {
+      valid = false;
     }
-  })
-  return valid
-}
+  });
+  return valid;
+};
 export default {
-  name: 'GoodCol',
+  name: "GoodCol",
   props: {
     span: { type: Number | String },
     offset: { type: Number | String },
@@ -30,44 +30,44 @@ export default {
   data() {
     return {
       gutter: 0,
-    }
+    };
   },
   methods: {
-    createClass(obj, str = '') {
+    createClass(obj, str = "") {
       if (!obj) {
-        return []
+        return [];
       }
-      let array = []
+      let array = [];
       if (obj.span) {
-        array.push(`col-${str}${obj.span}`)
+        array.push(`col-${str}${obj.span}`);
       }
       if (obj.offset) {
-        array.push(`offset-${str}${obj.offset}`)
+        array.push(`offset-${str}${obj.offset}`);
       }
-      return array
+      return array;
     },
   },
   computed: {
     colClass() {
-      let { span, offset, ipad, narrowPc, pc, widePc } = this
-      let createClass = this.createClass
+      let { span, offset, ipad, narrowPc, pc, widePc } = this;
+      let createClass = this.createClass;
       return [
         ...createClass({ span, offset }),
-        ...createClass(ipad, 'ipad-'),
-        ...createClass(narrowPc, 'narrow-pc-'),
-        ...createClass(pc, 'pc-'),
-        ...createClass(widePc, 'wide-pc-'),
-      ]
+        ...createClass(ipad, "ipad-"),
+        ...createClass(narrowPc, "narrow-pc-"),
+        ...createClass(pc, "pc-"),
+        ...createClass(widePc, "wide-pc-"),
+      ];
     },
     colStyle() {
-      let { gutter } = this
+      let { gutter } = this;
       return {
-        paddingRight: gutter / 2 + 'px',
-        paddingLeft: gutter / 2 + 'px',
-      }
+        paddingRight: gutter / 2 + "px",
+        paddingLeft: gutter / 2 + "px",
+      };
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
