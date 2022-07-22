@@ -32,29 +32,8 @@
     </style>
   </head>
   <body>
-    <style>
-      .sider {
-        background: #333;
-        width: 100px;
-      }
-      .header {
-        background: #999;
-        height: 100px;
-      }
-      .footer {
-        background: #ccc;
-        height: 50px;
-      }
-    </style>
     <div id="app">
-      <good-layout style="height:100vh">
-        <good-sider>sider</good-sider>
-        <good-layout>
-          <good-header>header</good-header>
-          <good-content>content</good-content>
-          <good-footer>footer</good-footer>
-        </good-layout>
-      </good-layout>
+      <button @click="showToast">点我</button>
     </div>
     <div id="test"></div>
 
