@@ -12,9 +12,14 @@ import Content from "./content.vue";
 import Footer from "./footer.vue";
 import Toast from "./toast.vue";
 import plugin from "./plugin.js";
+import Tabs from "./tabs.vue";
+import TabsHead from "./tabsHead.vue";
+import TabsBody from "./tabsBody.vue";
+import TabsItem from "./tabsItem.vue";
+import TabsPane from "./tabsPane.vue";
 
 Vue.component("good-button", Button);
-Vue.component("g-icon", Icon);
+Vue.component("good-icon", Icon);
 Vue.component("good-button-group", ButtonGroup);
 Vue.component("good-input", Input);
 Vue.component("good-row", Row);
@@ -26,6 +31,11 @@ Vue.component("good-content", Content);
 Vue.component("good-footer", Footer);
 Vue.component("good-toast", Toast);
 Vue.use(plugin);
+Vue.component("good-tabs", Tabs);
+Vue.component("good-tabs-head", TabsHead);
+Vue.component("good-tabs-body", TabsBody);
+Vue.component("good-tabs-item", TabsItem);
+Vue.component("good-tabs-pane", TabsPane);
 
 new Vue({
   el: "#app",

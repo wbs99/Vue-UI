@@ -30,9 +30,24 @@
   </head>
   <body>
     <div id="app">
-      <button @click="showToast1">top</button>
-      <button @click="showToast2">middle</button>
-      <button @click="showToast3">bottom</button>
+      <good-tabs selected="sports">
+        <good-tabs-head>
+          <good-tabs-item name="women">
+            <good-icon name="settings"></good-icon>
+            美女
+          </good-tabs-item>
+          <good-tabs-item name="finance">财经</good-tabs-item>
+          <good-tabs-item name="sports">体育</good-tabs-item>
+          <template slot="actions">
+            <button>设置</button>
+          </template>
+        </good-tabs-head>
+        <good-tabs-body>
+          <good-tabs-pane name="women">美女相关资讯</good-tabs-pane>
+          <good-tabs-pane name="finance">财经相关资讯</good-tabs-pane>
+          <good-tabs-pane name="sports">体育相关资讯</good-tabs-pane>
+        </good-tabs-body>
+      </good-tabs>
     </div>
     <div id="test"></div>
 
