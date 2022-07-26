@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import Bus from "./bus";
 export default {
   name: "GoodTabs",
   props: {
@@ -21,7 +22,7 @@ export default {
     },
   },
   mounted() {
-    //this.$emit('update:selected', this.selected);
+    Bus.$emit("update:selected", this.selected);
   },
   data() {
     return {};

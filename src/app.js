@@ -43,6 +43,7 @@ new Vue({
     loading1: false,
     loading2: true,
     message: "hi",
+    selectedTab: "sports",
   },
   mounted() {},
   methods: {
