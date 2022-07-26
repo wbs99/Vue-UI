@@ -37,13 +37,14 @@ export default {
   },
   methods: {
     xxx() {
-      Bus.$emit("update:selected", this.name);
+      Bus.$emit("update:selected", this.name, this);
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+$blue: blue;
 .tabs-item {
   flex-shrink: 0;
   padding: 0 1em;
@@ -52,7 +53,8 @@ export default {
   display: flex;
   align-items: center;
   &.active {
-    color: red;
+    color: $blue;
+    font-weight: bold;
   }
 }
 </style>

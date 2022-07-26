@@ -22,7 +22,18 @@ export default {
     },
   },
   mounted() {
-    Bus.$emit("update:selected", this.selected);
+    this.$children.map(vm => {
+      if (vm.$options.name === "GoodTabsHead") {
+        vm.$children.map(item => {
+          if (
+            item.$options.name === "GoodTabsItem" &&
+            item.name === this.selected
+          ) {
+            Bus.$emit("update:selected", this.selected, item);
+          }
+        });
+      }
+    });
   },
   data() {
     return {};
