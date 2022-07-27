@@ -18,7 +18,7 @@ export default {
   },
   mounted() {
     Bus.$on("update:selected", (name, vm) => {
-      const { width, height, left, right } = vm.$el.getBoundingClientRect();
+      const { width, left } = vm.$el.getBoundingClientRect();
       this.$refs.line.style.width = `${width}px`;
       this.$refs.line.style.left = `${left}px`;
     });

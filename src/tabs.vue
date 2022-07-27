@@ -22,6 +22,9 @@ export default {
     },
   },
   mounted() {
+    if (this.$children.length === 0) {
+      throw new Error("Tabs must have at least one child");
+    }
     this.$children.map(vm => {
       if (vm.$options.name === "GoodTabsHead") {
         vm.$children.map(item => {
